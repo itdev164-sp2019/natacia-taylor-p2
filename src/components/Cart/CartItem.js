@@ -1,4 +1,5 @@
 import React from 'react';
+import { Trash2 } from 'styled-icons/feather/Trash2'
 
 
 function CartItem({item, value}){
@@ -33,7 +34,7 @@ function CartItem({item, value}){
     {/* */}
     <div className="col-10 mx-auto col-lg-2">
     <div className="cart-icon" onClick={() => removeItem(id)}>
-    <i className="fas fa-trash"></i>
+    <Trash2 size="32"/>
     </div>
     </div>
     <div className="col-10 mx-auto col-lg-2">

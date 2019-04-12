@@ -8,14 +8,17 @@ import Details from './components/Details';
 import Cart from './components/Cart';
 import Default from './components/Default';
 import Modal from './components/Modal';
+import { ThemeProvider } from 'styled-components'
+import theme from './theme/Theme'
 
 
 class App extends Component {
   render() {
     return (
+      <ThemeProvider theme={theme}>
      <React.Fragment>
          <Navbar />
-         <Switch>
+         <Switch> {/* better for rendering nested routes (vs router)*/}
            <Route exact path="/" component={ProductList}/>
            <Route path="/details" component={Details}/>
            <Route path="/cart" component={Cart}/>
@@ -23,6 +26,7 @@ class App extends Component {
          </Switch>
          <Modal/>
      </React.Fragment>
+     </ThemeProvider>
     );
   }
 }
